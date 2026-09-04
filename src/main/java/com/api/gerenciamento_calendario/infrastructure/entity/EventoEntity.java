@@ -37,6 +37,6 @@ public class EventoEntity {
 
     private LocalDateTime dataInsercao = LocalDateTime.now();
 
-    @NotNull
-    private LocalTime horaInicio;
+    //@NotNull
+    //private LocalTime horaInicio;
 }
