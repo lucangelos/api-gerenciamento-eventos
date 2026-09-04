@@ -35,7 +35,7 @@ public class EventoService {
         eventoRepository.deleteByDataAndMinisterio(data, ministerio);
     }
 
-    public List<EventoEntity> listarEventos(LocalDate data) {
+    public List<EventoEntity> buscarEvento(LocalDate data) {
         LocalDateTime primeiraHoraMes = data.withDayOfMonth(1).atStartOfDay();
         LocalDateTime ultimaHoraMes = data.withDayOfMonth(data.lengthOfMonth()).atTime(23, 59, 59);
 
