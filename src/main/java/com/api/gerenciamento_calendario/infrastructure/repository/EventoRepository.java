@@ -17,4 +17,7 @@ public interface EventoRepository extends JpaRepository<EventoEntity, Long> {
 
     List<EventoEntity> findByDataBetween(LocalDateTime primeiraHoraMes,
                                          LocalDateTime ultimaHoraMes);
+
+    EventoEntity findByDataAndMinisterio(LocalDateTime data,
+                                         String ministerio);
 }

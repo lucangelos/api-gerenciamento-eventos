@@ -41,4 +41,15 @@ public class EventoService {
 
         return eventoRepository.findByDataBetween(primeiraHoraMes, ultimaHoraMes);
     }
+
+    public EventoEntity alterarEvento(EventoEntity evento, String ministerio,
+                                      LocalDateTime data) {
+        EventoEntity eventos = eventoRepository.findByDataAndMinisterio(data, ministerio);
+
+        if (Objects.isNull(eventos)) {
+            throw new RuntimeException("\n\nHorário não está preenchido");
+        }
+        evento.setId(eventos.getId());
+        return eventoRepository.save(evento);
+    }
 }
