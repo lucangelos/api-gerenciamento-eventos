@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Getter
@@ -25,13 +26,16 @@ public class EventoEntity {
     private Long id;
 
     @NotBlank
-    private String titulo;
+    private String evento;
 
     @NotBlank
     private String ministerio;
 
+    //Dia que será agendado
     @NotNull
-    private LocalDate data;
+    private LocalDateTime data;
+
+    private LocalDateTime dataInsercao = LocalDateTime.now();
 
     @NotNull
     private LocalTime horaInicio;
